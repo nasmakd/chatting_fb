@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Chat</title>
+		<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/chat.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+		<script defer src="js/chat.js"></script>
+		<script defer src="js/chat_list.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="logo">
+				<a href="index.html">Chat</a>
+			</div>
+			<div class="hamBtn"></div>
+      <div class="chatBtns">
+				<button id="logout" onclick="logout()">로그아웃</button>
+				<button onclick="deleteUser()">탈퇴</button>
+			</div>
+		</header>
+		<section>
+			<!-- 채팅한 기록물을 담을 곳 -->
+			<article>
+				<ul id="messages"></ul>
+			</article>
+			<!-- 폼 입력요소 양식을 작성할 공간 -->
+			<form onsubmit="return sendMessage();">
+				<textarea type="text" id="message" placeholder="메세지를 입력하세요" autocomplete="off"></textarea>
+				<input type="submit" id="send" value="메세지 전송" />
+			</form>
+		</section>
+		<div class="dark"></div>
+		<div id="message_popup">
+			<div class="msg_wrap">
+				<p>메세지를 삭제 하시겠습니까?</p>
+				<div class="del_btns_wrap"><button class="del_yes">예</button><button class="del_no">아니오</button></div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+#wrapper{
+	max-width: 640px;
+	min-width: 360px;
+	margin: 0 auto;
+	background-color: rgb(170, 210, 233);
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+@keyframes ani_stroke {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 600;
+    fill: rgba(255, 255, 255, 0.2);
+  }
+  30% {
+    opacity: 1;
+    stroke-dashoffset: 500;
+    fill: rgba(255, 255, 255, 0.5);
+  }
+  90% {
+    stroke-dashoffset: 300;
+    fill: rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+svg path{
+	stroke: rgb(164, 203, 238);
+  fill: rgb(164, 203, 238);
+  stroke-dasharray: 600;
+  opacity: 1;
+  -webkit-animation: ani_stroke 5s linear;
+          animation: ani_stroke 5s linear;
+}
+.logo{
+	background-color: #fff;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border-radius: 50%;
+  padding: 20px;
+}
+.title{
+  font-family: 'Lobster', cursive;
+  text-align: center;
+  margin:10px 0 50px;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: 0 0 2px rgb(17, 76, 166);
+}
+.loginBtn button{
+  background-color: #fff;
+  display: inline-block;
+  width: 160px;
+  padding: 10px 0;
+  border-radius: 6px;
+}
+.loginBtn button *{
+  vertical-align: middle;
+}
+.loginBtn img{
+  width: 20px;
+  margin-right: 5px;
+}
