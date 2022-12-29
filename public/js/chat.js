@@ -27,7 +27,7 @@ function authpop() {
 			var token = result.credential.accessToken;
 			// The signed-in user info.
 			var user = result.user;
-      location.href = 'chat.html';
+			location.href = 'chat.html';
 		})
 		.catch(function (error) {
 			alertmsg = 'errorCode: ' + error.code + '\r\n';
@@ -39,4 +39,9 @@ function authpop() {
 		});
 }
 
+const appCheck = firebase.appCheck();
+appCheck.activate(
+	'6Lc75qwjAAAAAJRseVodyNUy15Upegen3EuQFMG2',
 
+	true
+);
